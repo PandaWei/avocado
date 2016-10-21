@@ -1,0 +1,92 @@
+usage: avocado list [-h] [-V] [--paginator {on,off}]
+                    [--loaders [LOADERS [LOADERS ...]]]
+                    [--external-runner EXECUTABLE]
+                    [--external-runner-chdir {runner,test}]
+                    [--external-runner-testdir DIRECTORY] [--vt-list-guests]
+                    [--vt-list-archs] [--vt-config VT_CONFIG]
+                    [--vt-type VT_TYPE] [--vt-arch VT_ARCH]
+                    [--vt-machine-type VT_MACHINE_TYPE]
+                    [--vt-guest-os VT_GUEST_OS] [--vt-no-filter VT_NO_FILTER]
+                    [--vt-only-filter VT_ONLY_FILTER]
+                    [--vt-qemu-bin VT_QEMU_BIN]
+                    [--vt-qemu-dst-bin VT_DST_QEMU_BIN]
+                    [keywords [keywords ...]]
+
+positional arguments:
+  keywords              List of paths, aliases or other keywords used to
+                        locate tests. If empty, avocado will list tests on the
+                        configured test source, (see 'avocado config
+                        --datadir') Also, if there are other test loader
+                        plugins active, tests from those plugins might also
+                        show up (behavior may vary among plugins)
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -V, --verbose         Whether to show extra information (headers and
+                        summary). Current: False
+  --paginator {on,off}  Turn the paginator on/off. Current: on
+
+loader options:
+  --loaders [LOADERS [LOADERS ...]]
+                        Overrides the priority of the test loaders. You can
+                        specify either @loader_name or TEST_TYPE. By default
+                        it tries all available loaders according to priority
+                        set in settings->plugins.loaders.
+  --external-runner EXECUTABLE
+                        Path to an specific test runner that allows the use of
+                        its own tests. This should be used for running tests
+                        that do not conform to Avocado' SIMPLE testinterface
+                        and can not run standalone. Note: the use of
+                        --external-runner overwrites the --loaders to
+                        "external_runner"
+  --external-runner-chdir {runner,test}
+                        Change directory before executing tests. This option
+                        may be necessary because of requirements and/or
+                        limitations of the external test runner. If the
+                        external runner requires to be run from its own base
+                        directory,use "runner" here. If the external runner
+                        runs tests based on files and requires to be run from
+                        the directory where those files are located, use
+                        "test" here and specify the test directory with the
+                        option "--external-runner-testdir". Defaults to "None"
+  --external-runner-testdir DIRECTORY
+                        Where test files understood by the external test
+                        runner are located in the filesystem. Obviously this
+                        assumes and only applies to external test runners that
+                        run tests from files
+
+Virt-Test compat layer - Lister options:
+  --vt-list-guests      Also list the available guests (this option ignores
+                        the --vt-config and --vt-guest-os)
+  --vt-list-archs       Also list the available arch/machines for the given
+                        guest OS. (Use "--vt-guest-os ''" to see all
+                        combinations; --vt-config --vt-machine-type and --vt-
+                        arch args are ignored)
+  --vt-config VT_CONFIG
+                        Explicitly choose a cartesian config. When choosing
+                        this, some options will be ignored (see options below)
+  --vt-type VT_TYPE     Choose test type (qemu, libvirt, libguestfs,
+                        openvswitch, v2v, lvsb, spice). Default: qemu
+  --vt-arch VT_ARCH     Choose the VM architecture. Default: None
+  --vt-machine-type VT_MACHINE_TYPE
+                        Choose the VM machine type. Default: i440fx
+  --vt-guest-os VT_GUEST_OS
+                        Select the guest OS to be used. If --vt-config is
+                        provided, this will be ignored. Default: JeOS.23
+  --vt-no-filter VT_NO_FILTER
+                        List of space separated 'no' filters to be passed to
+                        the config parser. Default: ''
+  --vt-only-filter VT_ONLY_FILTER
+                        List of space separated 'only' filters to be passed to
+                        the config parser. Default: ''
+  --vt-qemu-bin VT_QEMU_BIN
+                        Path to a custom qemu binary to be tested. If --vt-
+                        config is provided and this flag is omitted, no
+                        attempt to set the qemu binaries will be made.
+                        Current: /bin/qemu-kvm
+  --vt-qemu-dst-bin VT_DST_QEMU_BIN
+                        Path to a custom qemu binary to be tested for the
+                        destination of a migration, overrides --vt-qemu-bin.
+                        If --vt-config is provided and this flag is omitted,
+                        no attempt to set the qemu binaries will be made.
+                        Current: /bin/qemu-kvm

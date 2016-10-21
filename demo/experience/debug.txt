@@ -1,0 +1,92 @@
+[root@localhost avocado]# scripts/avocado --show test run examples/tests/failtest.sh
+File /etc/avocado/sysinfo/commands does not exist.
+File /etc/avocado/sysinfo/files does not exist.
+File /etc/avocado/sysinfo/profilers does not exist.
+Command line: scripts/avocado --show test run examples/tests/failtest.sh
+
+Avocado version: 42.0
+Avocado git repo info
+Top commit: 0a62d9370f5dd735bfb1b9d024e6869934d42686
+Branch: runner-undefined-name
+
+Config files read (in order):
+/mnt/extra_disk/osc/avocado-devel/avocado/etc/avocado/avocado.conf
+/mnt/extra_disk/osc/avocado-devel/avocado/etc/avocado/conf.d/vt_joblock.conf
+/mnt/extra_disk/osc/avocado-devel/avocado/etc/avocado/conf.d/jobscripts.conf
+/mnt/extra_disk/osc/avocado-devel/avocado/etc/avocado/conf.d/gdb.conf
+/root/.config/avocado/avocado.conf
+
+Avocado config:
+Section.Key                              Value
+datadir.paths.base_dir                   /usr/share/avocado
+datadir.paths.test_dir                   /usr/share/avocado/tests
+datadir.paths.data_dir                   /usr/share/avocado/data
+datadir.paths.logs_dir                   ~/avocado/job-results
+sysinfo.collect.enabled                  True
+sysinfo.collect.installed_packages       False
+sysinfo.collect.profiler                 False
+sysinfo.collect.locale                   C
+sysinfo.collectibles.commands            /etc/avocado/sysinfo/commands
+sysinfo.collectibles.files               /etc/avocado/sysinfo/files
+sysinfo.collectibles.profilers           /etc/avocado/sysinfo/profilers
+runner.output.colored                    True
+runner.output.utf8                       
+runner.behavior.keep_tmp_files           False
+remoter.behavior.reject_unknown_hosts    False
+remoter.behavior.disable_known_hosts     False
+job.output.loglevel                      debug
+restclient.connection.hostname           localhost
+restclient.connection.port               9405
+restclient.connection.username           
+restclient.connection.password           
+plugins.disable                          ['vt', 'vt-list']
+plugins.skip_broken_plugin_notification  []
+plugins.loaders                          ['file', '@DEFAULT']
+plugins.vtjoblock.dir                    /tmp
+plugins.jobscripts.pre                   /etc/avocado/scripts/job/pre.d/
+plugins.jobscripts.post                  /etc/avocado/scripts/job/post.d/
+plugins.jobscripts.warn_non_existing_dir False
+plugins.jobscripts.warn_non_zero_status  True
+gdb.paths.gdb                            /usr/bin/gdb
+gdb.paths.gdbserver                      /usr/bin/gdbserver
+
+Avocado Data Directories:
+
+Avocado replaces config dirs that can't be accessed
+with sensible defaults. Please edit your local config
+file to customize values
+
+base     /usr/share/avocado
+tests    /usr/share/avocado/tests
+data     /usr/share/avocado/data
+logs     /root/avocado/job-results
+
+Temporary dir: /var/tmp/avocado_Jt35jj
+
+Variant 1:    /
+
+Job ID: bd2a32c0e3c852701d238bf92d782bad29e98909
+
+File /etc/avocado/sysinfo/commands does not exist.
+File /etc/avocado/sysinfo/files does not exist.
+File /etc/avocado/sysinfo/profilers does not exist.
+PARAMS (key=timeout, path=*, default=None) => None
+START 1-examples/tests/failtest.sh
+Running '/mnt/extra_disk/osc/avocado-devel/avocado/examples/tests/failtest.sh'
+Command '/mnt/extra_disk/osc/avocado-devel/avocado/examples/tests/failtest.sh' finished with 1 after 0.000938892364502s
+Exit status: 1
+Duration: 0.000938892364502
+
+Reproduced traceback from: /mnt/extra_disk/osc/avocado-devel/avocado/avocado/core/test.py:451
+Traceback (most recent call last):
+  File "/mnt/extra_disk/osc/avocado-devel/avocado/avocado/core/test.py", line 708, in test
+    self.execute_cmd()
+  File "/mnt/extra_disk/osc/avocado-devel/avocado/avocado/core/test.py", line 702, in execute_cmd
+    raise exceptions.TestFail(details)
+TestFail: Command '/mnt/extra_disk/osc/avocado-devel/avocado/examples/tests/failtest.sh' failed (rc=1)
+
+Local variables:
+ -> self <class 'avocado.core.test.SimpleTest'>: 1-examples/tests/failtest.sh
+FAIL 1-examples/tests/failtest.sh -> TestFail: Command '/mnt/extra_disk/osc/avocado-devel/avocado/examples/tests/failtest.sh' failed (rc=1)
+
+Test results available in /root/avocado/job-results/job-2016-10-20T15.18-bd2a32c

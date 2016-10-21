@@ -1,0 +1,43 @@
+[root@localhost avocado]# pwd
+/mnt/extra_disk/osc/avocado-devel/avocado
+[root@localhost avocado]# scripts/avocado -h
+usage: avocado [-h] [-v] [--config [CONFIG_FILE]] [--show [STREAM[:LVL]]] [-s]
+               
+               {exec-path,run,sysinfo,list,multiplex,plugins,diff,config,distro,vt-bootstrap}
+               ...
+
+Avocado Test Runner
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v, --version         show program's version number and exit
+  --config [CONFIG_FILE]
+                        Use custom configuration from a file
+  --show [STREAM[:LVL]]
+                        List of comma separated builtin logs, or logging
+                        streams optionally followed by LEVEL (DEBUG,INFO,...).
+                        Builtin streams are: "test": test output; "debug":
+                        tracebacks and other debugging info; "app":
+                        application output; "early": early logging of other
+                        streams, including test (very verbose); "remote":
+                        fabric/paramiko debug; "all": all builtin streams;
+                        "none": disables regular output (leaving only errors
+                        enabled). By default: 'app'
+  -s, --silent          disables regular output (leaving only errors enabled)
+
+subcommands:
+  valid subcommands
+
+  {exec-path,run,sysinfo,list,multiplex,plugins,diff,config,distro,vt-bootstrap}
+                        subcommand help
+    exec-path           Returns path to avocado bash libraries and exits.
+    run                 Runs one or more tests (native test, test alias,
+                        binaryor script)
+    sysinfo             Collect system information
+    list                List available tests
+    multiplex           Tool to analyze and visualize test variants and params
+    plugins             Displays plugin information
+    diff                Shows the difference between 2 jobs.
+    config              Shows avocado config keys
+    distro              Shows detected Linux distribution
+    vt-bootstrap        Avocado VT - implements the 'vt-bootstrap' subcommand

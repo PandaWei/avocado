@@ -1,0 +1,9 @@
+[root@localhost avocado]# scripts/avocado run examples/tests/passtest.sh examples/tests/failtest.sh  --external-runner=/bin/sh
+JOB ID     : f674014e4e2bb9b9a1ed52916588772f28a0ef8d
+JOB LOG    : /root/avocado/job-results/job-2016-10-20T16.20-f674014/job.log
+TESTS      : 2
+ (1/2) examples/tests/passtest.sh:  PASS (0.01 s)
+ (2/2) examples/tests/failtest.sh:  FAIL (0.04 s)
+RESULTS    : PASS 1 | ERROR 0 | FAIL 1 | SKIP 0 | WARN 0 | INTERRUPT 0
+TESTS TIME : 0.06 s
+JOB HTML   : /root/avocado/job-results/job-2016-10-20T16.20-f674014/html/results.html

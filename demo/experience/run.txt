@@ -1,0 +1,113 @@
+[root@localhost avocado]# scripts/avocado run examples/tests/passtest.sh examples/tests/failtest.sh
+JOB ID     : f873343a288542f475f9ec9cca869bd291744bbe
+JOB LOG    : /root/avocado/job-results/job-2016-10-20T15.17-f873343/job.log
+TESTS      : 2
+ (1/2) examples/tests/passtest.sh:  PASS (0.01 s)
+ (2/2) examples/tests/failtest.sh:  FAIL (0.04 s)
+RESULTS    : PASS 1 | ERROR 0 | FAIL 1 | SKIP 0 | WARN 0 | INTERRUPT 0
+TESTS TIME : 0.06 s
+JOB HTML   : /root/avocado/job-results/job-2016-10-20T15.17-f873343/html/results.html
+
+[root@localhost avocado]# cat /root/avocado/job-results/job-2016-10-20T15.17-f873343/job.log
+2016-10-20 15:17:50,495 sysinfo          L0391 DEBUG| File /etc/avocado/sysinfo/commands does not exist.
+2016-10-20 15:17:50,495 sysinfo          L0402 DEBUG| File /etc/avocado/sysinfo/files does not exist.
+2016-10-20 15:17:50,496 sysinfo          L0429 DEBUG| File /etc/avocado/sysinfo/profilers does not exist.
+2016-10-20 15:17:50,504 job              L0316 INFO | Command line: scripts/avocado run examples/tests/passtest.sh examples/tests/failtest.sh
+2016-10-20 15:17:50,504 job              L0317 INFO | 
+2016-10-20 15:17:50,504 job              L0322 INFO | Avocado version: 42.0
+2016-10-20 15:17:50,512 job              L0331 INFO | Avocado git repo info
+2016-10-20 15:17:50,512 job              L0332 INFO | Top commit: 0a62d9370f5dd735bfb1b9d024e6869934d42686
+2016-10-20 15:17:50,512 job              L0333 INFO | Branch: runner-undefined-name
+2016-10-20 15:17:50,512 job              L0334 INFO | 
+2016-10-20 15:17:50,512 job              L0339 INFO | Config files read (in order):
+2016-10-20 15:17:50,512 job              L0341 INFO | /mnt/extra_disk/osc/avocado-devel/avocado/etc/avocado/avocado.conf
+2016-10-20 15:17:50,512 job              L0341 INFO | /mnt/extra_disk/osc/avocado-devel/avocado/etc/avocado/conf.d/vt_joblock.conf
+2016-10-20 15:17:50,512 job              L0341 INFO | /mnt/extra_disk/osc/avocado-devel/avocado/etc/avocado/conf.d/jobscripts.conf
+2016-10-20 15:17:50,512 job              L0341 INFO | /mnt/extra_disk/osc/avocado-devel/avocado/etc/avocado/conf.d/gdb.conf
+2016-10-20 15:17:50,512 job              L0341 INFO | /root/.config/avocado/avocado.conf
+2016-10-20 15:17:50,512 job              L0346 INFO | 
+2016-10-20 15:17:50,512 job              L0348 INFO | Avocado config:
+2016-10-20 15:17:50,513 job              L0357 INFO | Section.Key                              Value
+2016-10-20 15:17:50,513 job              L0357 INFO | datadir.paths.base_dir                   /usr/share/avocado
+2016-10-20 15:17:50,513 job              L0357 INFO | datadir.paths.test_dir                   /usr/share/avocado/tests
+2016-10-20 15:17:50,513 job              L0357 INFO | datadir.paths.data_dir                   /usr/share/avocado/data
+2016-10-20 15:17:50,513 job              L0357 INFO | datadir.paths.logs_dir                   ~/avocado/job-results
+2016-10-20 15:17:50,513 job              L0357 INFO | sysinfo.collect.enabled                  True
+2016-10-20 15:17:50,514 job              L0357 INFO | sysinfo.collect.installed_packages       False
+2016-10-20 15:17:50,514 job              L0357 INFO | sysinfo.collect.profiler                 False
+2016-10-20 15:17:50,514 job              L0357 INFO | sysinfo.collect.locale                   C
+2016-10-20 15:17:50,514 job              L0357 INFO | sysinfo.collectibles.commands            /etc/avocado/sysinfo/commands
+2016-10-20 15:17:50,514 job              L0357 INFO | sysinfo.collectibles.files               /etc/avocado/sysinfo/files
+2016-10-20 15:17:50,514 job              L0357 INFO | sysinfo.collectibles.profilers           /etc/avocado/sysinfo/profilers
+2016-10-20 15:17:50,514 job              L0357 INFO | runner.output.colored                    True
+2016-10-20 15:17:50,514 job              L0357 INFO | runner.output.utf8                       
+2016-10-20 15:17:50,514 job              L0357 INFO | runner.behavior.keep_tmp_files           False
+2016-10-20 15:17:50,514 job              L0357 INFO | remoter.behavior.reject_unknown_hosts    False
+2016-10-20 15:17:50,514 job              L0357 INFO | remoter.behavior.disable_known_hosts     False
+2016-10-20 15:17:50,514 job              L0357 INFO | job.output.loglevel                      debug
+2016-10-20 15:17:50,514 job              L0357 INFO | restclient.connection.hostname           localhost
+2016-10-20 15:17:50,514 job              L0357 INFO | restclient.connection.port               9405
+2016-10-20 15:17:50,514 job              L0357 INFO | restclient.connection.username           
+2016-10-20 15:17:50,514 job              L0357 INFO | restclient.connection.password           
+2016-10-20 15:17:50,514 job              L0357 INFO | plugins.disable                          ['vt', 'vt-list']
+2016-10-20 15:17:50,514 job              L0357 INFO | plugins.skip_broken_plugin_notification  []
+2016-10-20 15:17:50,514 job              L0357 INFO | plugins.loaders                          ['file', '@DEFAULT']
+2016-10-20 15:17:50,515 job              L0357 INFO | plugins.vtjoblock.dir                    /tmp
+2016-10-20 15:17:50,515 job              L0357 INFO | plugins.jobscripts.pre                   /etc/avocado/scripts/job/pre.d/
+2016-10-20 15:17:50,515 job              L0357 INFO | plugins.jobscripts.post                  /etc/avocado/scripts/job/post.d/
+2016-10-20 15:17:50,515 job              L0357 INFO | plugins.jobscripts.warn_non_existing_dir False
+2016-10-20 15:17:50,515 job              L0357 INFO | plugins.jobscripts.warn_non_zero_status  True
+2016-10-20 15:17:50,515 job              L0357 INFO | gdb.paths.gdb                            /usr/bin/gdb
+2016-10-20 15:17:50,515 job              L0357 INFO | gdb.paths.gdbserver                      /usr/bin/gdbserver
+2016-10-20 15:17:50,515 job              L0358 INFO | 
+2016-10-20 15:17:50,515 job              L0363 INFO | Avocado Data Directories:
+2016-10-20 15:17:50,515 job              L0364 INFO | 
+2016-10-20 15:17:50,515 job              L0365 INFO | Avocado replaces config dirs that can't be accessed
+2016-10-20 15:17:50,515 job              L0366 INFO | with sensible defaults. Please edit your local config
+2016-10-20 15:17:50,515 job              L0367 INFO | file to customize values
+2016-10-20 15:17:50,515 job              L0368 INFO | 
+2016-10-20 15:17:50,515 job              L0369 INFO | base     /usr/share/avocado
+2016-10-20 15:17:50,515 job              L0370 INFO | tests    /usr/share/avocado/tests
+2016-10-20 15:17:50,516 job              L0371 INFO | data     /usr/share/avocado/data
+2016-10-20 15:17:50,516 job              L0372 INFO | logs     /root/avocado/job-results
+2016-10-20 15:17:50,516 job              L0373 INFO | 
+2016-10-20 15:17:50,516 job              L0387 INFO | Temporary dir: /var/tmp/avocado_ICMakb
+2016-10-20 15:17:50,516 job              L0388 INFO | 
+2016-10-20 15:17:50,516 job              L0395 INFO | Variant 1:    /
+2016-10-20 15:17:50,516 job              L0398 INFO | 
+2016-10-20 15:17:50,516 job              L0307 INFO | Job ID: f873343a288542f475f9ec9cca869bd291744bbe
+2016-10-20 15:17:50,516 job              L0310 INFO | 
+2016-10-20 15:17:50,521 sysinfo          L0391 DEBUG| File /etc/avocado/sysinfo/commands does not exist.
+2016-10-20 15:17:50,522 sysinfo          L0402 DEBUG| File /etc/avocado/sysinfo/files does not exist.
+2016-10-20 15:17:50,522 sysinfo          L0429 DEBUG| File /etc/avocado/sysinfo/profilers does not exist.
+2016-10-20 15:17:50,531 multiplexer      L0166 DEBUG| PARAMS (key=timeout, path=*, default=None) => None
+2016-10-20 15:17:50,531 test             L0216 INFO | START 1-examples/tests/passtest.sh
+2016-10-20 15:17:50,532 process          L0368 INFO | Running '/mnt/extra_disk/osc/avocado-devel/avocado/examples/tests/passtest.sh'
+2016-10-20 15:17:50,536 process          L0481 INFO | Command '/mnt/extra_disk/osc/avocado-devel/avocado/examples/tests/passtest.sh' finished with 0 after 0.000903129577637s
+2016-10-20 15:17:50,536 test             L0684 INFO | Exit status: 0
+2016-10-20 15:17:50,536 test             L0685 INFO | Duration: 0.000903129577637
+2016-10-20 15:17:50,546 test             L0595 INFO | PASS 1-examples/tests/passtest.sh
+2016-10-20 15:17:50,546 test             L0576 INFO | 
+2016-10-20 15:17:50,553 sysinfo          L0391 DEBUG| File /etc/avocado/sysinfo/commands does not exist.
+2016-10-20 15:17:50,553 sysinfo          L0402 DEBUG| File /etc/avocado/sysinfo/files does not exist.
+2016-10-20 15:17:50,554 sysinfo          L0429 DEBUG| File /etc/avocado/sysinfo/profilers does not exist.
+2016-10-20 15:17:50,562 multiplexer      L0166 DEBUG| PARAMS (key=timeout, path=*, default=None) => None
+2016-10-20 15:17:50,562 test             L0216 INFO | START 2-examples/tests/failtest.sh
+2016-10-20 15:17:50,564 process          L0368 INFO | Running '/mnt/extra_disk/osc/avocado-devel/avocado/examples/tests/failtest.sh'
+2016-10-20 15:17:50,567 process          L0481 INFO | Command '/mnt/extra_disk/osc/avocado-devel/avocado/examples/tests/failtest.sh' finished with 1 after 0.000893831253052s
+2016-10-20 15:17:50,568 test             L0684 INFO | Exit status: 1
+2016-10-20 15:17:50,568 test             L0685 INFO | Duration: 0.000893831253052
+2016-10-20 15:17:50,568 stacktrace       L0038 ERROR| 
+2016-10-20 15:17:50,568 stacktrace       L0041 ERROR| Reproduced traceback from: /mnt/extra_disk/osc/avocado-devel/avocado/avocado/core/test.py:451
+2016-10-20 15:17:50,568 stacktrace       L0044 ERROR| Traceback (most recent call last):
+2016-10-20 15:17:50,569 stacktrace       L0044 ERROR|   File "/mnt/extra_disk/osc/avocado-devel/avocado/avocado/core/test.py", line 708, in test
+2016-10-20 15:17:50,569 stacktrace       L0044 ERROR|     self.execute_cmd()
+2016-10-20 15:17:50,569 stacktrace       L0044 ERROR|   File "/mnt/extra_disk/osc/avocado-devel/avocado/avocado/core/test.py", line 702, in execute_cmd
+2016-10-20 15:17:50,569 stacktrace       L0044 ERROR|     raise exceptions.TestFail(details)
+2016-10-20 15:17:50,569 stacktrace       L0044 ERROR| TestFail: Command '/mnt/extra_disk/osc/avocado-devel/avocado/examples/tests/failtest.sh' failed (rc=1)
+2016-10-20 15:17:50,569 stacktrace       L0045 ERROR| 
+2016-10-20 15:17:50,569 test             L0456 DEBUG| Local variables:
+2016-10-20 15:17:50,604 test             L0459 DEBUG|  -> self <class 'avocado.core.test.SimpleTest'>: 2-examples/tests/failtest.sh
+2016-10-20 15:17:50,604 test             L0589 ERROR| FAIL 2-examples/tests/failtest.sh -> TestFail: Command '/mnt/extra_disk/osc/avocado-devel/avocado/examples/tests/failtest.sh' failed (rc=1)
+2016-10-20 15:17:50,605 test             L0576 INFO | 
+2016-10-20 15:17:50,613 job              L0480 INFO | Test results available in /root/avocado/job-results/job-2016-10-20T15.17-f873343

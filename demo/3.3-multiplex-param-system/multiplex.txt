@@ -1,0 +1,58 @@
+[root@localhost avocado]# scripts/avocado multiplex -t -m examples/mux-environment.yaml
+ ┗━━ run
+      ┣━━ hw
+      ┃    ┣━━ cpu
+      ┃    ┃    ╠══ intel
+      ┃    ┃    ╠══ amd
+      ┃    ┃    ╚══ arm
+      ┃    ┗━━ disk
+      ┃         ╠══ scsi
+      ┃         ╚══ virtio
+      ┣━━ distro
+      ┃    ╠══ fedora
+      ┃    ╚══ mint
+      ┗━━ env
+           ╠══ debug
+           ╚══ prod
+
+[root@localhost avocado]# scripts/avocado multiplex -m examples/mux-environment.yaml
+Variants generated:
+Variant 1:    /run/hw/cpu/intel, /run/hw/disk/scsi, /run/distro/fedora, /run/env/debug
+Variant 2:    /run/hw/cpu/intel, /run/hw/disk/scsi, /run/distro/fedora, /run/env/prod
+Variant 3:    /run/hw/cpu/intel, /run/hw/disk/scsi, /run/distro/mint, /run/env/debug
+Variant 4:    /run/hw/cpu/intel, /run/hw/disk/scsi, /run/distro/mint, /run/env/prod
+Variant 5:    /run/hw/cpu/intel, /run/hw/disk/virtio, /run/distro/fedora, /run/env/debug
+Variant 6:    /run/hw/cpu/intel, /run/hw/disk/virtio, /run/distro/fedora, /run/env/prod
+Variant 7:    /run/hw/cpu/intel, /run/hw/disk/virtio, /run/distro/mint, /run/env/debug
+Variant 8:    /run/hw/cpu/intel, /run/hw/disk/virtio, /run/distro/mint, /run/env/prod
+Variant 9:    /run/hw/cpu/amd, /run/hw/disk/scsi, /run/distro/fedora, /run/env/debug
+Variant 10:    /run/hw/cpu/amd, /run/hw/disk/scsi, /run/distro/fedora, /run/env/prod
+Variant 11:    /run/hw/cpu/amd, /run/hw/disk/scsi, /run/distro/mint, /run/env/debug
+Variant 12:    /run/hw/cpu/amd, /run/hw/disk/scsi, /run/distro/mint, /run/env/prod
+Variant 13:    /run/hw/cpu/amd, /run/hw/disk/virtio, /run/distro/fedora, /run/env/debug
+Variant 14:    /run/hw/cpu/amd, /run/hw/disk/virtio, /run/distro/fedora, /run/env/prod
+Variant 15:    /run/hw/cpu/amd, /run/hw/disk/virtio, /run/distro/mint, /run/env/debug
+Variant 16:    /run/hw/cpu/amd, /run/hw/disk/virtio, /run/distro/mint, /run/env/prod
+Variant 17:    /run/hw/cpu/arm, /run/hw/disk/scsi, /run/distro/fedora, /run/env/debug
+Variant 18:    /run/hw/cpu/arm, /run/hw/disk/scsi, /run/distro/fedora, /run/env/prod
+Variant 19:    /run/hw/cpu/arm, /run/hw/disk/scsi, /run/distro/mint, /run/env/debug
+Variant 20:    /run/hw/cpu/arm, /run/hw/disk/scsi, /run/distro/mint, /run/env/prod
+Variant 21:    /run/hw/cpu/arm, /run/hw/disk/virtio, /run/distro/fedora, /run/env/debug
+Variant 22:    /run/hw/cpu/arm, /run/hw/disk/virtio, /run/distro/fedora, /run/env/prod
+Variant 23:    /run/hw/cpu/arm, /run/hw/disk/virtio, /run/distro/mint, /run/env/debug
+Variant 24:    /run/hw/cpu/arm, /run/hw/disk/virtio, /run/distro/mint, /run/env/prod
+
+[root@localhost avocado]# scripts/avocado multiplex  -m examples/mux-environment.yaml  --filter-out /run/hw/disk/virtio
+Variants generated:
+Variant 1:    /run/hw/cpu/intel, /run/hw/disk/scsi, /run/distro/fedora, /run/env/debug
+Variant 2:    /run/hw/cpu/intel, /run/hw/disk/scsi, /run/distro/fedora, /run/env/prod
+Variant 3:    /run/hw/cpu/intel, /run/hw/disk/scsi, /run/distro/mint, /run/env/debug
+Variant 4:    /run/hw/cpu/intel, /run/hw/disk/scsi, /run/distro/mint, /run/env/prod
+Variant 5:    /run/hw/cpu/amd, /run/hw/disk/scsi, /run/distro/fedora, /run/env/debug
+Variant 6:    /run/hw/cpu/amd, /run/hw/disk/scsi, /run/distro/fedora, /run/env/prod
+Variant 7:    /run/hw/cpu/amd, /run/hw/disk/scsi, /run/distro/mint, /run/env/debug
+Variant 8:    /run/hw/cpu/amd, /run/hw/disk/scsi, /run/distro/mint, /run/env/prod
+Variant 9:    /run/hw/cpu/arm, /run/hw/disk/scsi, /run/distro/fedora, /run/env/debug
+Variant 10:    /run/hw/cpu/arm, /run/hw/disk/scsi, /run/distro/fedora, /run/env/prod
+Variant 11:    /run/hw/cpu/arm, /run/hw/disk/scsi, /run/distro/mint, /run/env/debug
+Variant 12:    /run/hw/cpu/arm, /run/hw/disk/scsi, /run/distro/mint, /run/env/prod

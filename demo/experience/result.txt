@@ -1,0 +1,42 @@
+[root@localhost avocado]# scripts/avocado run examples/tests/passtest.sh --json -
+{
+    "debuglog": "/root/avocado/job-results/job-2016-10-20T15.39-837fd1d/job.log",
+    "errors": 0,
+    "failures": 0,
+    "job_id": "837fd1d57a16ffae0c50106a4b0f054d307a06b4",
+    "pass": 1,
+    "skip": 0,
+    "tests": [
+        {
+            "end": 1476949195.856168,
+            "fail_reason": "None",
+            "logdir": "/root/avocado/job-results/job-2016-10-20T15.39-837fd1d/test-results/1-examples_tests_passtest.sh",
+            "logfile": "/root/avocado/job-results/job-2016-10-20T15.39-837fd1d/test-results/1-examples_tests_passtest.sh/debug.log",
+            "start": 1476949195.841127,
+            "status": "PASS",
+            "test": "1-examples/tests/passtest.sh",
+            "time": 0.015041112899780273,
+            "url": "1-examples/tests/passtest.sh",
+            "whiteboard": ""
+        }
+    ],
+    "time": 0.015041112899780273,
+    "total": 1
+}
+
+[root@localhost avocado]# scripts/avocado run examples/tests/passtest.sh --xunit -
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" name="avocado" skipped="0" tests="1" time="0.015084028244" timestamp="2016-10-20 15:40:46.430827">
+	<testcase classname="SimpleTest" name="1-examples/tests/passtest.sh" time="0.015084028244"/>
+</testsuite>
+
+[root@localhost avocado]# scripts/avocado run examples/tests/passtest.sh --tap -
+1..1
+# debug.log of examples/tests/passtest.sh:
+#   15:41:17 INFO | Running '/mnt/extra_disk/osc/avocado-devel/avocado/examples/tests/passtest.sh'
+#   15:41:17 INFO | Command '/mnt/extra_disk/osc/avocado-devel/avocado/examples/tests/passtest.sh' finished with 0 after 0.00102305412292s
+#   15:41:17 INFO | Exit status: 0
+#   15:41:17 INFO | Duration: 0.00102305412292
+#   15:41:17 INFO | PASS 1-examples/tests/passtest.sh
+#   15:41:17 INFO | 
+ok 1 examples/tests/passtest.sh
